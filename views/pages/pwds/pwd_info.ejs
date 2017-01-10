@@ -1,0 +1,102 @@
+ <% include ../../partials/app_header %>
+<% include ../../partials/app_nav %>
+
+
+<section id="pwdProfile">
+  <div class="container main-container">
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1">
+          <div class="row">
+            <div class="col-lg-6">
+              <h2>Pwd Profile</h2>
+              <hr>
+            </div>
+            <div class="col-lg-6 text-right">
+              <a href="/pwds/create_id/<%= info.pwdInfo._id %>" class="btn btn-default btn-lg">Print ID <i class="fa fa-print" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-8 col-lg-offset-2">
+            <h3>PWD Information</h3>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-6">
+                  <label>First Name</label>
+                  <p class="pwd-data"><%=info.pwdInfo.first_name %></p>
+                </div>
+                <div class="col-lg-6">
+                  <label>Last Name</label>
+                  <p class="pwd-data"><%=info.pwdInfo.last_name %></p>
+                </div>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-6">
+                  <label>PWD ID</label>
+                  <p class="pwd-data"><%= info.pwdInfo.pwd_id %></p>
+                </div>
+                <div class="col-lg-6">
+                  <label>Disability</label>
+                  <p class="pwd-data"><%= disability %></p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-6">
+                  <label>Mobile Number</label>
+                  <p class="pwd-data"><%= info.pwdInfo.mobile_number %></p>
+                </div>
+                <div class="col-lg-6">
+                  <label>Barangay</label>
+                  <p class="pwd-data"><%= barangay %></p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Address</label>
+              <p class="pwd-data"><%= info.pwdInfo.address %></p>
+            </div>
+            <% if(info.pwdInfo.has_companion){ %>
+            <h3>Companion Information</h3>
+            <hr>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-4">
+                  <label>First Name</label>
+                  <p class="pwd-data"><%= info.compInfo.first_name %></p>
+                </div>
+                <div class="col-lg-4">
+                  <label>Last Name</label>
+                  <p class="pwd-data"><%= info.compInfo.last_name %></p>
+                </div>
+                <div class="col-lg-4">
+                  <label>Relationship</label>
+                  <% function capitalize(string) {return string[0].toUpperCase()+string.slice(1)}; %>
+                  <p class="pwd-data"><%= capitalize(info.compInfo.relationship) %></p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-6">
+                  <label>Mobile Number</label>
+                  <p class="pwd-data"><%= info.compInfo.mobile_number %> </p>
+                </div>
+                <div class="col-lg-6">
+                  <label>Companion ID</label>
+                  <p class="pwd-data"><%= info.compInfo.companion_id   %> </p>
+                </div>
+              </div>
+            </div>
+            <%}%>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% include ../../partials/app_vendors %>
+<!-- <script type="text/javascript" src="/js/create_pwd.js"></script> -->
+<% include ../../partials/app_footer %>

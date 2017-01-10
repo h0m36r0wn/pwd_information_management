@@ -1,0 +1,31 @@
+<% include ../../partials/app_header %>
+<% include ../../partials/app_nav %>
+
+<section id="request-form-segment">
+  <div class="container main-container">
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1">
+        <h2>Request</h2>
+        <hr>
+        <form id="requestsForm" method="post">
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" name="title" class="form-control input-lg" value="">
+          </div>
+          <div class="form-group">
+            <label>Request</label>
+            <textarea name="request" rows="12" class="form-control input-lg"></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-default btn-lg btn-block">Submit Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% include ../../partials/app_vendors %>
+<script type="text/javascript" src="/js/request_form.js"></script>
+
+<% include ../../partials/app_footer %>

@@ -1,0 +1,47 @@
+<% include ../../partials/app_header %>
+<% include ../../partials/app_nav %>
+
+<section id="announcements-section">
+  <div class="container main-container">
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1">
+        <h1>Announcements</h1>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+          <ul id="annoucements-items" style="display:none">
+            <%if(items.length > 0){ %>
+              <% items.forEach(function(item){ %>
+                <li>
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      <h3><%= item.title %></h3>
+                      <span><%=  item.created_by.full_name %></span> | <span class="date-created"><%= item.date_created %></span>
+                      <p class="item-content"><%= item.content.substring(0,150) %></p>
+                      <% if(user.role == "admin"){ %>
+                        <div class="actions text-right">
+                          <a href="#" class="btn btn-warning">Edit</a>
+                          <a href="#" class="btn btn-danger">Delete</a>
+                        </div>
+                      <%} %>
+                    </div>
+                  </div>
+                </li>
+              <% }) %>
+            <% } %>
+          </ul>
+          <div id="annoucements-items-pagination">
+        	    <a id="annoucements-items-previous" class="btn btn-default"> Previous</a>
+        	    <a id="annoucements-items-next" class="btn btn-default">Next </a>
+        	</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% include ../../partials/app_vendors %>\
+<script type="text/javascript" src="/js/announcements.js"></script>
+
+<% include ../../partials/app_footer %>

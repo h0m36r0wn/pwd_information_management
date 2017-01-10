@@ -1,0 +1,22 @@
+{
+  "name": "pwd",
+  "description": "information management for pwd in pasig",
+  "main": "",
+  "authors": [
+    "h0m36r0wn <pepito.raviz@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/h0m36r0wn/pwd_information_management",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrap-offcanvas": "^2.4.0",
+    "noty": "^2.3.11"
+  }
+}

@@ -1,0 +1,29 @@
+label{
+  color:$dark-blue;
+  font-size: 1.6rem;
+}
+
+#publishContent{
+  background: $dark-blue;
+  color:#fff;
+}
+
+
+#announcements-section{
+  #annoucements-items{
+    list-style: none;
+  }
+}
+#annoucements-items-pagination{
+  .disabled{
+    display: none;
+  }
+  #annoucements-items-next{
+    position: absolute;
+    right: 0;
+  }
+  .btn{
+    background: $dark-blue;
+    color:#fff;
+  }
+}

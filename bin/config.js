@@ -1,0 +1,61 @@
+module.exports = {
+  "HOME_PAGE":'homepage.js',
+  "INDEX_PAGE":'index.js',
+  "DATABASE":'mongodb://localhost/pwd_db',
+  "ROLES":{
+    "ADMIN":'admin',
+    "GUARDIAN":'guardian',
+    "BRGY_STAFF":' barangay staff',
+    "PWD":'person with disability'
+  },
+  "BARANGAYS":{
+    "bagong_ilog":"Bagong Ilog"  ,
+    "bambang":"Bambang"  ,
+    "buting":"Buting"  ,
+    "caniogan":"Caniogan"  ,
+    "dela_paz":"Dela Paz" ,
+    "kalawaaan":"Kalawaan"  ,
+    "kapasigan":"Kapasigan"  ,
+    "kapitolyo":"Kapitolyo"  ,
+    "malinao":"Malinao"  ,
+    "manggahan":"Manggahan"  ,
+    "maybunga":"Maybunga"  ,
+    "oranbo":"Oranbo" ,
+    "palatiw":"Palatiw"  ,
+    "pinagbuhatan":"Pinagbuhatan"  ,
+    "pineda":"Pineda"  ,
+    "rosario":"Rosario"  ,
+    "sagad":"Sagad"  ,
+    "san_antonio":"San Antonio"  ,
+    "san_miguel":"San Miguel"  ,
+    "san_nicolas":"San Nicolas"  ,
+    "santa_cruz":"Santa Cruz"  ,
+    "santa_lucia":"Santa Lucia"  ,
+    "santa_rosa":"Santa Rosa"  ,
+    "santo_tomas":"Santo Tomas" ,
+    "sumilang":"Sumilang" ,
+    "ugong":"Ugong"
+  },
+  "DISABILITIES":{
+    "blind":"Blind"  ,
+    "visually_impared":"Visually Impared"  ,
+    "deaf":"Deaf"  ,
+    "orthopedically_chllngd":"Orthopedically Challenged"  ,
+    "intellectual_problem":"Intellectual Problem"  ,
+    "authism":"Authism"  ,
+    "multiple_disability":"Multiple Disability"  ,
+    "serious_emotional_disorder":"Serious emotional disorder"  ,
+    "communication_disorder":"Communication disorder"  ,
+    "deafblind":"Deaf Blind"
+  },
+  "ROLES":{
+    "ADMIN":'admin',
+    "USER":'user',
+    "BRGYSTAFF":'brgy_staff'
+  },
+  "SECRET":"PWDMIS",
+  "ADMIN_ACC":"sysadmin@pwdmis.com",
+  "DEFAULT_PASS":"pwdMis",
+  "SMSURL":"https://www.itexmo.com/php_api/api.php",
+  "ITEXTMOKEY":"PEPIT129917_2N48T"
+}

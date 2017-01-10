@@ -1,0 +1,33 @@
+#login-section{
+  img{
+    width: 175px;
+  }
+  height: 100vh;
+  background: $blue-accent;
+  margin-top: -70px;
+  padding-top: 80px;
+  .panel{
+     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+     h2{
+       color:$dark-blue;
+       font-size: 46px;
+     }
+     form{
+       label{
+         color:$dark-blue;
+       }
+       .btn{
+         background: $dark-blue;
+         color:#fff;
+       }
+       a{
+         text-decoration: none;
+         color:$dark-blue;
+         font-weight: bold;
+         display: block;
+         margin-top: 10px ;
+       }
+     }
+  }
+
+}

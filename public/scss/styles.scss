@@ -1,0 +1,44 @@
+@import './variables';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body{
+}
+.navbar{
+  border: 0px;
+  background: $dark-blue;
+  .dropdown-toggle{
+    background: none !important;
+  }
+  .dropdown-menu{
+    a{
+      color:$dark-blue !important;
+    }
+  }
+  .navbar-header{
+    a{
+      img{
+        padding: 10px 0px;
+      }
+    }
+  }
+  ul{
+    padding: 10px 0px;
+    li{
+      a{
+        color:#fff !important;
+      }
+    }
+  }
+}
+
+.main-container{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  padding:70px 50px;
+  h1,h2,h3{
+    color:$dark-blue;
+  }
+}
+
+@import "../../views/pages/announcements/announcements";
+@import "../../views/pages/requests/requests";
+@import "../../views/pages/pwds/pwds";
+@import "../../views/pages/staffs/staffs";

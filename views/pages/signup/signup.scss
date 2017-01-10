@@ -1,0 +1,42 @@
+#content-background{
+  background: $blue-accent;
+  height: 350px;
+  h2{
+    color:#fff;
+    font-size: 48px;
+  }
+}
+
+#form-container{
+  position: relative;
+  margin-top: -250px;
+  z-index: 999;
+}
+
+.panel-body{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  padding: 30px;
+}
+
+#signupForm{
+  label{
+    color:$dark-blue;
+    font-size: 16px;
+  }
+  label.error{
+    color:#F44336;
+    margin-top: 5px;
+  }
+  h2 i{
+    color:$dark-blue;
+  }
+  .btn-default{
+    background: $dark-blue;
+    color:#fff;
+    text-transform: uppercase;
+  }
+
+  .companion-info{
+    display: none;
+  }
+}

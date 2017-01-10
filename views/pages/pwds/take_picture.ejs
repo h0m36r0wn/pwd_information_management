@@ -1,0 +1,27 @@
+<% include ../../partials/app_header %>
+<% include ../../partials/app_nav %>
+<section id="takePicture">
+  <div class="container main-container">
+    <div class="col-lg-10 col-lg-offset-1">
+      <h2>Take Picture</h2>
+      <div id="camContainer"></div>
+      <form method="post">
+        <div class="form-group">
+          <input type="text" name="pwd_picture" class="input-lg form-control" id="photoInput">
+        </div>
+        <div class="form-group">
+          <input type="text" name="pwdId" class="input-lg form-control" id="pwdId" value="<%= pwdId %>" style="display:none;">
+        </div>
+        <div class="form-group text-center">
+          <button type="button" class="btn btn-default" id="reTake" style="display:none;">Take Again <i class="fa fa-camera" aria-hidden="true"></i></button>
+          <button type="button" class="btn btn-default" id="previewBtn">Take Snapshot <i class="fa fa-camera" aria-hidden="true"></i></button>
+          <button type="submit" class="btn btn-default" id="savePhoto">Save Photo <i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<% include ../../partials/app_vendors %>
+<script type="text/javascript" src="/js/take_picture.js"></script>
+<% include ../../partials/app_footer %>

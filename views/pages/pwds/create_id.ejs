@@ -1,0 +1,56 @@
+<% include ../../partials/app_header %>
+<section id="idPageSection">
+  <div class="page">
+      <div id="idFront">
+        <div id="idHeader" class="text-center">
+          <img src="/img/phflag.png" alt="" id="phflag">
+          <h5>Republic of the Philippines</h5>
+          <img src="/img/pasig.png" alt="" id="phflag">
+          <img src="/img/pwdlogo.jpg" alt="" id="phflag">
+        </div>
+        <div id="province" >
+          <span>Province of NCR</span>
+        </div>
+        <div id="pwdInfo" class="text-center">
+          <h4>Municipality of Pasig</h4>
+          <div id="nameContainer">
+            <h3><%= info.first_name %> <%= info.last_name %></h3>
+          </div>
+          <span>Full Name</span>
+          <div id="nameContainer">
+            <h3><%= disability %></h3>
+          </div>
+          <span>Disability</span>
+          <span id="valid-text">Valid anywhere in the country</span>
+        </div>
+        <div id="pwdImg">
+          <img src="<%= pwdImage %>" alt="">
+          <span id="pwdId"><%= info.pwd_id %></span>
+        </div>
+      </div>
+      <div id="idBack">
+        <div id="someText">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
+        </div>
+        <div id="addressContainer">
+          <h4>Address</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inc </p>
+        </div>
+        <div class="barangayContainer">
+          <h4>Barangay</h4>
+          <p><%= barangay %></p>
+        </div>
+        <div class="mobileContainer">
+          <h4>Mobile Number</h4>
+          <p><%= info.mobile_number %></p>
+        </div>
+      </div>
+
+
+  </div>
+</section>
+
+
+<% include ../../partials/app_vendors %>
+<script type="text/javascript" src="/js/create_id.js"></script>
+<% include ../../partials/app_footer %>
