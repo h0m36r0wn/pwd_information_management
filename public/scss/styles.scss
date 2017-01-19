@@ -20,25 +20,50 @@ body{
       }
     }
   }
-  ul{
-    padding: 10px 0px;
-    li{
-      a{
-        color:#fff !important;
+  ul.nav{
+    li.nav-items{
+      &:hover{
+        a.nav-links{
+          color:#fff !important;
+        }
+      }
+      a.nav-links{
+        line-height: 40px;
+        color:$white-accent !important;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+    .dropdown{
+      ul{
+        li{
+          a{
+            line-height: 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color:$dark-blue !important;
+          }
+        }
       }
     }
   }
-}
 
+}
+section{
+  background: #607D8B;
+}
 .main-container{
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  min-height: 100vh;
   padding:70px 50px;
   h1,h2,h3{
     color:$dark-blue;
   }
+  background: #fff;
 }
 
 @import "../../views/pages/announcements/announcements";
 @import "../../views/pages/requests/requests";
 @import "../../views/pages/pwds/pwds";
 @import "../../views/pages/staffs/staffs";
+@import "../../views/pages/dashboard/dashboard";

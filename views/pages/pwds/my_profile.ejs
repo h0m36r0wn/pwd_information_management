@@ -1,0 +1,88 @@
+<% include ../../partials/app_header %>
+<% include ../../partials/app_nav %>
+
+<section id="myProfile">
+  <div class="container main-container">
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1">
+        <h2>Pwd Profile</h2>
+        <hr>
+        <form id="profileForm" method="post">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-lg-6">
+                <label>First Name</label>
+                <input type="text" name="first_name" value="<%=info.pwdInfo.first_name %>" class="form-control input-lg" disabled>
+              </div>
+              <div class="col-lg-6">
+                <label>Last Name</label>
+                <input type="text" name="last_name" value="<%=info.pwdInfo.last_name %>" class="form-control input-lg" disabled>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>PWD-ID</label>
+            <input type="text" name="pwd_id" value="<%= info.pwdInfo.pwd_id %>"  class="form-control input-lg" disabled>
+          </div>
+          <div class="form-group">
+            <label>Disability</label>
+            <input type="text" name="pwd_id" value="<%= disability %>"  class="form-control input-lg" disabled>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-lg-6">
+                <label>Mobile Number</label>
+                <input type="text" name="mobile_number" value="<%= info.pwdInfo.mobile_number %>"  class="form-control input-lg" disabled>
+              </div>
+              <div class="col-lg-6">
+                <label>Barangay</label>
+                <input type="text" name="mobile_number" value="<%= barangay %>"  class="form-control input-lg" disabled>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <textarea name="address" rows="5" class="form-control input-lg" disabled><%= info.pwdInfo.address %></textarea>
+          </div>
+          <% if(info.pwdInfo.has_companion){ %>
+          <h3>Companion Information</h3>
+          <hr>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-lg-6">
+                <label>First Name</label>
+                <input type="text" name="first_name" value="<%= info.compInfo.first_name %>" class="input-lg form-control" disabled>
+              </div>
+              <div class="col-lg-6">
+                <label>Last Name</label>
+                <input type="text" name="first_name" value="<%= info.compInfo.last_name %>" class="input-lg form-control" disabled>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Relationship</label>
+            <% function capitalize(string) {return string[0].toUpperCase()+string.slice(1)}; %>
+            <input type="text" name="first_name" value="<%= capitalize(info.compInfo.relationship) %>" class="input-lg form-control" disabled>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-lg-6">
+                <label>Mobile Number</label>
+                <input type="text" name="first_name" value="<%= info.compInfo.mobile_number %>" class="input-lg form-control" disabled>
+              </div>
+              <div class="col-lg-6">
+                <label>Companion ID</label>
+                <input type="text" name="first_name" value="<%= info.compInfo.companion_id  %> " class="input-lg form-control" disabled>
+              </div>
+            </div>
+          </div>
+          <%}%>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% include ../../partials/app_vendors %>
+<!-- <script type="text/javascript" src="/js/create_pwd.js"></script> -->
+<% include ../../partials/app_footer %>

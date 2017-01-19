@@ -1,0 +1,60 @@
+<% include ../../partials/app_header %>
+<% include ../../partials/app_nav %>
+
+<section id="create-staff-section">
+  <div class="container main-container">
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1">
+          <h2>Staffs</h2>
+          <hr>
+          <form id="staffAccForm"  method="post">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="text" name="email" class="form-control input-lg" value="<%= staffInfo.user.email %>">
+            </div>
+            <div class="form-group">
+              <label>Barangay</label>
+              <select class="form-control input-lg" name="barangay" id="barangays">
+                <% Object.keys(barangays).forEach(function(key){ %>
+                  <%if(staffInfo.barangay == key){ %>
+                    <option value="<%= key %>" selected><%= barangays[key] %>  </option>
+                  <%}else { %>
+                      <option value="<%= key %>"><%= barangays[key] %>  </option>
+                  <%}%>
+
+                <%}) %>
+              </select>
+            </div>
+            <div class="form-group ">
+                <label>Password</label>
+                <input type="password" name="password" value="" name="password" class="input-lg form-control">
+            </div>
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" name="first_name" value="<%= staffInfo.first_name %>" class="input-lg form-control">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" name="last_name" class="input-lg form-control" value="<%= staffInfo.last_name %>">
+            </div>
+            <div class="form-group">
+              <label>Mobile Number</label>
+              <input type="text" name="mobile_number" class="input-lg form-control" value="<%= staffInfo.mobile_number %>">
+            </div>
+            <div class="form-group">
+              <input type="text" name="user_id" class="input-lg form-control" value="<%= staffInfo.user._id %>" style="display:none;">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-default btn-lg btn-block">Save</button>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<% include ../../partials/app_vendors %>
+<script type="text/javascript" src="/js/staff_form.js"></script>
+<% include ../../partials/app_footer %>

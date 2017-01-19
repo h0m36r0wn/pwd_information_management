@@ -13,6 +13,24 @@ label{
   #annoucements-items{
     list-style: none;
   }
+  .btn-default{
+    background: $dark-blue;
+    color:$white-accent;
+    margin-top: 20px;
+  }
+  .announcement-title{
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .announcement-meta{
+    font-weight: bold;
+    font-size: 1.4rem;
+    color:#546E7A;
+  }
+  .item-content{
+    font-weight: 400;
+    font-size: 1.8rem;
+  }
 }
 #annoucements-items-pagination{
   .disabled{
@@ -25,5 +43,22 @@ label{
   .btn{
     background: $dark-blue;
     color:#fff;
+  }
+}
+#announcements-details-section{
+  h2{
+    color:$dark-blue;
+    font-weight: bold;
+    font-size: 3.6rem;
+  }
+  .announcement-meta{
+    color:#546E7A;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+  }
+  .announcement-content{
+    font-weight: 400;
+    font-size:1.8rem;
   }
 }

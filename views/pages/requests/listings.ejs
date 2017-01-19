@@ -1,0 +1,35 @@
+<% include ../../partials/app_header %>
+<% include ../../partials/app_nav %>
+
+<section id="request-listing">
+  <div class="container main-container">
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1">
+        <h2>Requests</h2>
+        <hr>
+        <table class="table" id="requestTbl">
+          <thead>
+            <th>Request ID</th>
+            <th>Title</th>
+            <th>Date Requested</th>
+            <% if(user.role == 'user'){ %>
+              <th>Status</th>
+            <% } %>
+            <% if(user.role !='user'){ %>
+              <th>Requested By</th>
+              <th>Action</th>
+            <%}%>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% include ../../partials/app_vendors %>
+<script type="text/javascript">
+  var role = "<%= user.role %>";
+</script>
+<script type="text/javascript" src="/js/requests.js"></script>
+<% include ../../partials/app_footer %>

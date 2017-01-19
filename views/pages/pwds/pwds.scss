@@ -39,7 +39,10 @@
 
 
 #idPageSection{
-
+  .btn{
+    background: $dark-blue;
+    color:#fff;
+  }
   background:#546E7A;
   .page{
     margin: 0 auto;
@@ -132,4 +135,10 @@
 @page {
   size: A4;
   margin: 0;
+}
+@media print
+{
+  #printId, #backToHome{
+    display: none !important;
+  }
 }

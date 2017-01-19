@@ -64,7 +64,7 @@ var pwdFunct = (function(){
     var tbl = createTable();
     getList().then(function(pwds){
       $.each(pwds, function(ind, obj){
-        var buttons = '<a href="/pwds/profile/'+obj._id+'" class="btn btn-default"><i class="fa fa-eye" aria-hidden="true"></i></a> <a href="/pwds/profile/'+obj._id+'" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> <a href="/pwds/profile/'+obj._id+'" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a>'
+        var buttons = '<a href="/pwds/profile/'+obj._id+'" class="btn btn-default"><i class="fa fa-eye" aria-hidden="true"></i></a>'
         tbl.row.add([obj.pwd_id, obj.full_name,barangays[obj.barangay], disabilities[obj.disability_type],buttons]).draw();
       })
     })

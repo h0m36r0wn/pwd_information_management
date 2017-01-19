@@ -1,1 +1,85 @@
-<%= info %>
+<% include ../../partials/app_header %>
+<% include ../../partials/app_nav %>
+<section id="dashboard">
+  <div class="container main-container">
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1" id="badge-container">
+        <h2 class="data-lbl">Data Summary</h2>
+        <hr>
+        <div class="row">
+          <div class="col-lg-4 col-md-4">
+            <div class="badges">
+              <div class="row">
+                <div class="col-lg-5 text-center icon-container col-md-5">
+                  <img src="/img/disabled.png" alt="">
+                </div>
+                <div class="col-lg-7 text-center data-container col-md-7">
+                  <span class="data-num">300</span>
+                    <span class="data-label">PWDS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="badges">
+              <div class="row">
+                <div class="col-lg-5 text-center icon-container col-md-5">
+                  <img src="/img/clipboard.png" alt="">
+                </div>
+                <div class="col-lg-7 text-center data-container col-md-7">
+                  <span class="data-num">240</span>
+                    <span class="data-label">Requests</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="badges">
+              <div class="row">
+                <div class="col-lg-5 text-center icon-container col-md-5">
+                  <img src="/img/megaphone.png" alt="">
+                </div>
+                <div class="col-lg-7 text-center data-container col-md-7">
+                  <span class="data-num">27</span>
+                    <span class="data-label">Annoucements</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1" id="charts-container">
+        <h2 class="data-lbl">Weekly Requests</h2>
+        <hr>
+
+        <div class="row">
+          <div id="request-charts">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1" id="pwd-category-container">
+        <h2 class="data-lbl">Disability Category</h2>
+        <hr>
+        <div class="row">
+          <div id="pwd-categeroy-chart">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<% include ../../partials/app_vendors %>
+<script type="text/javascript" src="/hcharts/highcharts.js"></script>
+<script type="text/javascript" src="/js/dashboard.js"></script>
+<% include ../../partials/app_footer %>

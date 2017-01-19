@@ -48,6 +48,36 @@
 #services-section{
   padding: 80px 0px;
   background: #f6f6f6;
+  #id-sys{
+    background-image: url(/img/id_sys.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+  }
+  #mdr{
+    background-image: url(/img/mdr.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+  }
+
+  #requests{
+    background-image: url(/img/requests.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+  }
+
+  #analytics{
+    background-image: url(/img/analytics.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+  }
   h2{
     color: #4c4c4c;
     font-size: 48px;

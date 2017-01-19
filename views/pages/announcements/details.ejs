@@ -1,0 +1,19 @@
+<% include ../../partials/app_header %>
+<% include ../../partials/app_nav %>
+
+<section id="announcements-details-section">
+  <div class="container main-container">
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1">
+        <h2><%= annDetails.title %></h2>
+        <span class="announcement-meta"><%= annDetails.created_by.full_name%> |</span> <span class="date-created announcement-meta"><%= annDetails.date_created %></span>
+        <hr>
+        <p class="announcement-content"><%= annDetails.content %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% include ../../partials/app_vendors %>
+<script type="text/javascript" src="/js/ann_details.js"></script>
+<% include ../../partials/app_footer %>

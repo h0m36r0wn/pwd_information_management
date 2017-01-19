@@ -5,7 +5,16 @@
   <div class="container main-container">
     <div class="row">
       <div class="col-lg-10 col-lg-offset-1">
-        <h1>Announcements</h1>
+        <div class="row">
+          <div class="col-lg-6">
+            <h1>Announcements</h1>
+          </div>
+          <% if(user.role !='user' ) { %>
+            <div class="col-lg-6 text-right">
+              <a href="/announcements/create" class="btn btn-default btn-lg">Create Announcement</a>
+            </div>
+          <%} %>
+        </div>
         <hr>
       </div>
     </div>
@@ -17,13 +26,14 @@
                 <li>
                   <div class="panel panel-default">
                     <div class="panel-body">
-                      <h3><%= item.title %></h3>
-                      <span><%=  item.created_by.full_name %></span> | <span class="date-created"><%= item.date_created %></span>
-                      <p class="item-content"><%= item.content.substring(0,150) %></p>
+                      <h3 class="announcement-title"><%= item.title %>
+                        <span class="announcement-meta"><%=  item.created_by.full_name %> |</span> <span class="date-created announcement-meta"><%= item.date_created %></span></h3>
+                      <hr>
+                      <p class="item-content"><%= item.content.substring(0,150) %> ... <a href="/announcements/details/<%= item._id %>">Read More</a></p>
                       <% if(user.role == "admin"){ %>
                         <div class="actions text-right">
-                          <a href="#" class="btn btn-warning">Edit</a>
-                          <a href="#" class="btn btn-danger">Delete</a>
+                          <a href="/announcements/edit/<%= item._id %>" class="btn btn-warning">Edit</a>
+                          <a href="#" class="btn btn-danger delete-item" data-itemid="<%= item._id %>">Delete</a>
                         </div>
                       <%} %>
                     </div>
@@ -41,7 +51,13 @@
   </div>
 </section>
 
-<% include ../../partials/app_vendors %>\
+<% include ../../partials/app_vendors %>
+<script type="text/javascript">
+var annCreated = "<%= annCreated  %>";
+var updateSuccess = "<%= updateSuccess %>";
+var updateFailed = "<%=  updateFailed %>";
+
+</script>
 <script type="text/javascript" src="/js/announcements.js"></script>
 
 <% include ../../partials/app_footer %>

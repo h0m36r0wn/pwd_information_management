@@ -1,0 +1,40 @@
+<% include ../../partials/app_header %>
+<% include ../../partials/app_nav %>
+
+<section id="request-form-segment">
+  <div class="container main-container">
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1">
+        <h2>Request</h2>
+        <hr>
+        <form id="requestsForm" method="post">
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" name="title" class="form-control input-lg" value="<%= reqInfo.title %>" disabled>
+          </div>
+          <div class="form-group">
+            <label>Request</label>
+            <textarea name="request" rows="12" class="form-control input-lg" disabled><%= reqInfo.request %></textarea>
+          </div>
+          <% if(user.role == 'admin'){%>
+            <button type="button" class="btn btn-default btn-lg btn-block" id="grantBtn">Grant Requests</button>
+          <%} %>
+
+          <% if(user.role == 'brgy_staff'){%>
+            <button type="button" class="btn btn-default btn-lg btn-block" id="reviewedBtn">Set request as reviewed and forward</button>
+          <%} %>
+          <% if(user.role != 'user'){%>
+            <button type="button" class="btn btn-danger btn-lg btn-block" id="declineBtn">Decline Request</button>
+          <%} %>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% include ../../partials/app_vendors %>
+<script type="text/javascript">
+  var requestId = "<%= reqInfo._id; %>";
+</script>
+<script type="text/javascript" src="/js/request_details.js"></script>
+<% include ../../partials/app_footer %>

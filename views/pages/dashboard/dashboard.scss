@@ -1,0 +1,47 @@
+#dashboard{
+  .data-lbl{
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  #badge-container{
+    padding: 10px 0px;
+    .badges{
+      background: $dark-blue;
+      height: 150px;
+      border-radius: 2px;
+    }
+    .icon-container{
+      padding: 35px 0px;
+    }
+    .data-container{
+      .data-num{
+        display: block;
+        color:#fff;
+        font-weight: bold;
+        font-size: 8.0rem;
+      }
+      .data-label{
+        display: block;
+        color:#fff;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  #charts-container{
+    #request-charts{
+      min-height: 300px;
+      position: relative;
+      background: #CFD8DC;
+    }
+  }
+
+  #pwd-category-container{
+    #pwd-categeroy-chart{
+      min-height: 300px;
+      position: relative;
+      background: #CFD8DC;
+    }
+  }
+}

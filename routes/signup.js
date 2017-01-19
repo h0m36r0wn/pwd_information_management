@@ -8,7 +8,7 @@ var User = require('../controllers/Users');
 
 router.route('/')
   .get(function(req, res){
-    res.render('pages/signup/signup',{ barangays: CONFIG.BARANGAYS, disabilities:CONFIG.DISABILITIES });
+    res.render('pages/signup/signup',{ barangays: CONFIG.BARANGAYS, disabilities:CONFIG.DISABILITIES, page:'signuppage' });
   })
 
   .post(function(req, res){
@@ -29,6 +29,7 @@ router.route('/')
           pwd.pwd_id = pwdId;
           pwd.barangay = body.barangays;
           pwd.mobile_number = body.mobile_num;
+          pwd.full_name = body.first_name+" "+body.last_name;
           pwd.address = body.address;
           pwd.user_id = userId;
           pwd.has_companion = body.has_companion;

@@ -1,0 +1,133 @@
+<% include ../../partials/app_header %>
+<% include ../../partials/kiosk_nav %>
+
+<section id="createProfile-section">
+  <div class="container main-container">
+    <div class="col-lg-10 col-lg-offset-1">
+      <h2>PWD MDR</h2>
+
+      <form id="createPwdForm"  method="post">
+        <div id="rootwizard" class="tabbable tabs-left">
+
+          <ul>
+            <li><a href="#pwdPhoto" data-toggle="tab">ID Picture</a></li>
+            <li><a href="#pwdInfo" data-toggle="tab">PWD Information</a></li>
+            <li><a href="#tab3" data-toggle="tab">Companion</a></li>
+          </ul>
+          <div class="tab-content">
+              <div class="tab-pane" id="pwdPhoto">
+                <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2" id="cameraContainer">
+                    <div class="form-group">
+                        <div id="myCam"></div>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" name="pwd_picture" class="form-control" id="photoInput" style="display:none;">
+                    </div>
+                    <div class="form-group text-center">
+                      <button type="button" class="btn btn-default" id="reTake">Take Again <i class="fa fa-camera" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-default" id="previewBtn">Take Snapshot <i class="fa fa-camera" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-default" id="savePhoto">Save Photo <i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="pwdInfo">
+                <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2">
+                    <h2>PWD Info</h2>
+                    <hr>
+                    <div class="form-group">
+                      <label>Email</label>
+                      <input type="text" name="email" class="form-control input-lg">
+                    </div>
+                    <div class="form-group">
+                      <label>First Name</label>
+                      <input type="text" name="first_name" value="" class="input-lg form-control">
+                    </div>
+                    <div class="form-group">
+                      <label>Last Name</label>
+                      <input type="text" name="last_name" class="input-lg form-control" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Disability</label>
+                        <select class="input-lg form-control" name="disability" id="disability-type">
+                          <option value="" selected hidden>Type of disability</option>
+                          <% Object.keys(disabilities).forEach(function(key){ %>
+                            <option value="<%= key %>"><%= disabilities[key] %></option>
+                          <% }) %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Barangay <i class="fa fa-question-circle" data-toggle="tooltip" title="Barangay where the PWD located at"  aria-hidden="true"></i></label>
+                      <select class="form-control input-lg" name="barangays" id="barangays">
+                        <option value="" selected hidden>Select your barangay</option>
+                        <% Object.keys(barangays).forEach(function(key){ %>
+                          <option value="<%= key %>"><%= barangays[key] %>  </option>
+                        <%}) %>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Mobile Number</label>
+                      <input type="text" name="mobile_num" value="" class="input-lg form-control">
+                    </div>
+                    <div class="form-group">
+                      <label>Address</label>
+                      <textarea name="address" rows="5" class="input-lg form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label>Has Companion <i class="fa fa-question-circle" data-toggle="tooltip" title="Do you have any companion in life ex. relative, spouse , mother and such"  aria-hidden="true"></i></label>
+                      <select class="input-lg form-control" name="has_companion" id="has-companion">
+                        <option value="" hidden selected>Do you have a companion?</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="tab-pane" id="tab3">
+              <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                  <h2>Companion Info</h2>
+                  <div class="form-group companion-info">
+                    <label>Relationship</label>
+                    <select class="form-control input-lg" name="relationship" id="companionRel">
+                      <option value="" selected hidden>Select companion type</option>
+                      <option value="guardian">Guardian</option>
+                      <option value="spouse">Spouse</option>
+                      <option value="parent">Parent</option>
+                      <option value="relative">Relative</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>First name</label>
+                    <input type="text" name="companion_fname" value="" class="input-lg form-control" id="compFname">
+                  </div>
+                  <div class="form-group">
+                    <label>Last name</label>
+                    <input type="text" name="companion_lname" value="" class="input-lg form-control"  id="compLname">
+                  </div>
+                  <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="text" name="companion_mobile_num" value="" class="input-lg form-control"  id="compMobNum">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul class="pager wizard">
+              <li class="previous"><a href="#">Previous</a></li>
+              <li class="next"><a href="#">Next</a></li>
+              <li class="finish"><button type="submit" class="btn btn-lg btn-default">Finish</button></li>
+            </ul>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<% include ../../partials/app_vendors %>
+<script type="text/javascript" src="/js/kiosk.js"></script>
+<% include ../../partials/app_footer %>

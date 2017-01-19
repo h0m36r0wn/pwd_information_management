@@ -11,6 +11,18 @@ var requestsModel = new Schema({
     request_id:{
       type:String
     },
+    isGranted:{
+      type:Boolean,
+      default:false
+    },
+    isReviewed:{
+      type:Boolean,
+      default:false
+    },
+    isDeclined:{
+      type:Boolean,
+      default:false
+    },
     requestedBy:{
       type:Schema.Types.ObjectId,
       ref:'Pwds'

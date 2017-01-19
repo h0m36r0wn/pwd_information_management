@@ -6,6 +6,7 @@ var Companion = require('../controllers/Companion');
 var User = require('../controllers/Users');
 var ImgMdl = require('../models/PwdImageMdl');
 var passport = require('../bin/passport');
+var Globals = require('../controllers/Globals');
 router.route('/')
   .get(passport.checkAuthentication, function(req, res){
     res.render('pages/pwds/pwd_list');
@@ -73,7 +74,7 @@ router.route('/create_account')
 
 
 router.route('/create_id/:pwdid')
-  .get(function(req, res){
+  .get(passport.checkAuthentication,function(req, res){
     var pwdId = req.params.pwdid;
     var pwd = new PWD();
     pwd.pwd_uuid = pwdId;
@@ -97,6 +98,7 @@ router.route('/create_id/:pwdid')
     })
 
   })
+
 router.route('/take_picture/:pwdId')
   .get(passport.checkAuthentication, function(req, res){
     var pwdId = req.params.pwdId;
@@ -104,10 +106,14 @@ router.route('/take_picture/:pwdId')
   })
   .post(passport.checkAuthentication, function(req, res){
     var img = new ImgMdl();
-    img.image_uri = req.body.pwd_picture;
-    img.pwd = req.body.pwdId;
-    img.save();
-    res.redirect('/pwds/create_id/'+req.body.pwdId);
+    var query = { pwd:req.body.pwdId };
+    var updates = { image_uri:req.body.pwd_picture };
+    var opts = { upsert:true, new:true, safe:true };
+    ImgMdl.findOneAndUpdate(query,updates, opts ,function(err, isUpdated){
+      console.log(isUpdated);
+      res.redirect('/pwds/create_id/'+req.body.pwdId);
+    })
+
   })
 router.route('/pwd_list')
   .get(passport.checkAuthentication, function(req, res){
@@ -136,5 +142,26 @@ router.route('/profile/:pwd_id')
        res.render('pages/pwds/pwd_info', {info:info, barangay:CONFIG.BARANGAYS[info.pwdInfo.barangay], disability:CONFIG.DISABILITIES[info.pwdInfo.disability_type]});
      })
 
+  })
+  router.route('/my_profile')
+    .get(passport.checkAuthentication,function(req, res){
+
+       var pwd_id = req.user.pwd_info._id;
+       var pwds = new PWD({pwd_uuid:pwd_id});
+       var info = {};
+       pwds.getInfo().then(function(pwdInfo){
+         info = pwdInfo;
+         res.render('pages/pwds/my_profile', {info:info, barangay:CONFIG.BARANGAYS[info.pwdInfo.barangay], disability:CONFIG.DISABILITIES[info.pwdInfo.disability_type]});
+       })
+
+    })
+
+router.route('/notify_id')
+  .post(function(req, res){
+    if(req.body.print == 'done'){
+      var globals = new Globals();
+      globals.pwd_id = req.body.pwdId;
+      globals.sendNotifId();
+    }
   })
 module.exports = router;

@@ -9,7 +9,6 @@ router.route('/')
     AnnMdl.find({})
     .populate('created_by')
     .exec(function(err, contents){
-      console.log(contents);
     })
     res.render('pages/dashboard/dashboard', { info:req.user });
   })
